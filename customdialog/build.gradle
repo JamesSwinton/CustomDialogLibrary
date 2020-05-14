@@ -21,6 +21,19 @@ android {
         }
     }
 
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = new File("Application Name (v" + variant.versionName + ").apk")
+        }
+    }
+
 }
 
 dependencies {
